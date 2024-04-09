@@ -27,7 +27,7 @@ include = [
 
 [template.args]
 mod_name = "Hexmyth"
-author = "colinmyth"
+author = "Colin-McCaffery"
 show_landing_text = false
 
 [extra.hexcasting]

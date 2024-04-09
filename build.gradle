@@ -92,7 +92,6 @@ allprojects {
                 includeGroup "maven.modrinth"
             }
         }
-
         // Add any other repositories with your cross-platform dependency mods
     }
 
