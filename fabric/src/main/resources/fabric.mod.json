@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "hexmyth",
+  "version": "${version}",
+  "name": "Hexmyth",
+  "description": "Hexmyth addon for Hex Casting",
+  "authors": [
+    "colinmyth"
+  ],
+  "contact": {
+    "homepage": "https://colinmyth.github.io/hexmyth",
+    "sources": "https://github.com/colinmyth/hexmyth"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.hexmyth.fabric.HexmythFabric"
+    ],
+    "client": [
+      "net.hexmyth.fabric.HexmythClientFabric"
+    ]
+  },
+  "mixins": [
+    "hexmyth-common.mixins.json",
+    "hexmyth.mixins.json"
+  ],
+  "depends": {
+    "minecraft": ">=${minecraftVersion}",
+    "fabricloader": ">=${fabricLoaderVersion}",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=${fabricKotlinVersion}",
+    "architectury": ">=${architecturyVersion}",
+    "hexcasting": ">=${hexcastingVersion}"
+  }
+}

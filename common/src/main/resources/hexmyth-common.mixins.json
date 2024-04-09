@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "net.hexmyth.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+    "HexmythMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

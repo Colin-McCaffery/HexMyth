@@ -1,0 +1,20 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+# https://copier.readthedocs.io/en/stable/configuring/#the-copier-answersyml-file
+_commit: v0.0.8
+_src_path: gh:FallingColors/hexdummy
+author: colinmyth
+capitalize_platforms: false
+classname: Hexmyth
+default_branch: main
+description: Hexmyth addon for Hex Casting
+display_name: Hexmyth
+github_repo: hexmyth
+hexcasting_version: 0.10.3
+homepage_url: https://colinmyth.github.io/hexmyth
+initial_mod_version: 0.0.1
+java_version: 17
+license: MIT
+mappings_name: Mojmap
+modid: hexmyth
+package: net.hexmyth
+sources_url: https://github.com/colinmyth/hexmyth

@@ -1,0 +1,13 @@
+package net.hexmyth.forge;
+
+import net.hexmyth.HexmythClient;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+
+/**
+ * Forge client loading entrypoint.
+ */
+public class HexmythClientForge {
+    public static void init(FMLClientSetupEvent event) {
+        HexmythClient.init();
+    }
+}

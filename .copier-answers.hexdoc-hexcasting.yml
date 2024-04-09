@@ -1,0 +1,27 @@
+# Changes here will be overwritten by Copier. NEVER EDIT MANUALLY
+# See: https://copier.readthedocs.io/en/stable/configuring/#the-copier-answersyml-file
+_commit: v0.1.11
+_src_path: gh:hexdoc-dev/hexdoc-hexcasting-template
+author: colinmyth
+book_id: hexmyth:hexmythbook
+default_branch: main
+github_repo: hexmyth
+gradle_mod_version_key: modVersion
+hexdoc_mod_plugin_classname: HexmythModPlugin
+hexdoc_plugin_classname: HexmythPlugin
+java_lang:
+    ext: java
+    src: java
+java_package: net/hexmyth
+mod_display_name: Hexmyth
+modid: hexmyth
+multiloader: true
+package_export_root: doc/src/hexdoc_hexmyth/_export
+package_name: hexdoc-hexmyth
+package_slug: hexdoc_hexmyth
+package_src: doc/src/hexdoc_hexmyth
+pages_url: https://colinmyth.github.io/hexmyth
+pattern_regex:
+    per_world_value: registerPerWorld
+    regex: (?P<is_per_world>register|registerPerWorld)\(HexPattern\.fromAngles\("(?P<signature>[qweasd]+)",\s*HexDir\.(?P<startdir>\w+)\),\s*"(?P<name>[^"]+)"?
+pattern_registry: registry/HexmythPatternRegistry.java
