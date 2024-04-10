@@ -3,7 +3,7 @@ package net.hexmyth.networking;
 import dev.architectury.networking.NetworkChannel;
 import net.minecraft.server.level.ServerPlayer;
 
-import static net.hexmyth.Hexmyth.id;
+import static net.hexmyth.HexMyth.id;
 
 public class HexmythNetworking {
     private static final NetworkChannel CHANNEL = NetworkChannel.create(id("networking_channel"));

@@ -3,7 +3,7 @@ package net.hexmyth;
 /**
  * Common client loading entrypoint.
  */
-public class HexmythClient {
+public class HexMythClient {
     public static void init() {
 
     }

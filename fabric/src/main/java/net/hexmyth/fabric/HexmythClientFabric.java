@@ -1,7 +1,7 @@
 package net.hexmyth.fabric;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.hexmyth.HexmythClient;
+import net.hexmyth.HexMythClient;
 
 /**
  * Fabric client loading entrypoint.
@@ -9,6 +9,6 @@ import net.hexmyth.HexmythClient;
 public class HexmythClientFabric implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        HexmythClient.init();
+        HexMythClient.init();
     }
 }

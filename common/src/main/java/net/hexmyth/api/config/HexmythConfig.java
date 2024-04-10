@@ -1,8 +1,6 @@
 package net.hexmyth.api.config;
 
-import net.hexmyth.Hexmyth;
-
-import java.util.Collection;
+import net.hexmyth.HexMyth;
 
 /**
  * Platform-agnostic class for statically accessing current config values.
@@ -35,7 +33,7 @@ public class HexmythConfig {
 
     public static void setCommon(CommonConfigAccess common) {
         if (HexmythConfig.common != dummyCommon) {
-            Hexmyth.LOGGER.warn("CommonConfigAccess was replaced! Old {} New {}", HexmythConfig.common.getClass().getName(), common.getClass().getName());
+            HexMyth.LOGGER.warn("CommonConfigAccess was replaced! Old {} New {}", HexmythConfig.common.getClass().getName(), common.getClass().getName());
         }
         HexmythConfig.common = common;
     }
@@ -46,7 +44,7 @@ public class HexmythConfig {
 
     public static void setClient(ClientConfigAccess client) {
         if (HexmythConfig.client != dummyClient) {
-            Hexmyth.LOGGER.warn("ClientConfigAccess was replaced! Old {} New {}", HexmythConfig.client.getClass().getName(), client.getClass().getName());
+            HexMyth.LOGGER.warn("ClientConfigAccess was replaced! Old {} New {}", HexmythConfig.client.getClass().getName(), client.getClass().getName());
         }
         HexmythConfig.client = client;
     }
@@ -58,7 +56,7 @@ public class HexmythConfig {
     public static void setServer(ServerConfigAccess server) {
 
         if (HexmythConfig.server != dummyServer) {
-            Hexmyth.LOGGER.warn("ServerConfigAccess was replaced! Old {} New {}", HexmythConfig.server.getClass().getName(), server.getClass().getName());
+            HexMyth.LOGGER.warn("ServerConfigAccess was replaced! Old {} New {}", HexmythConfig.server.getClass().getName(), server.getClass().getName());
         }
         HexmythConfig.server = server;
     }

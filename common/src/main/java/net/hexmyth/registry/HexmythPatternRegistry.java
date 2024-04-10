@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.ArrayList;
 import java.util.List;
 
-import static net.hexmyth.Hexmyth.id;
+import static net.hexmyth.HexMyth.id;
 
 public class HexmythPatternRegistry {
     public static List<Triple<HexPattern, ResourceLocation, Action>> PATTERNS = new ArrayList<>();

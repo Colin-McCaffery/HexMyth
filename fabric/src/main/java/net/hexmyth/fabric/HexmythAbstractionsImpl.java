@@ -1,13 +1,13 @@
 package net.hexmyth.fabric;
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.hexmyth.HexmythAbstractions;
+import net.hexmyth.HexMythAbstractions;
 
 import java.nio.file.Path;
 
 public class HexmythAbstractionsImpl {
     /**
-     * This is the actual implementation of {@link HexmythAbstractions#getConfigDirectory()}.
+     * This is the actual implementation of {@link HexMythAbstractions#getConfigDirectory()}.
      */
     public static Path getConfigDirectory() {
         return FabricLoader.getInstance().getConfigDir();

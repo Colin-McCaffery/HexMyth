@@ -2,7 +2,7 @@ package net.hexmyth.fabric;
 
 import at.petrak.hexcasting.api.misc.MediaConstants;
 import dev.architectury.platform.Platform;
-import net.hexmyth.Hexmyth;
+import net.hexmyth.HexMyth;
 import net.hexmyth.api.config.HexmythConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigData;
@@ -13,7 +13,7 @@ import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.fabricmc.api.EnvType;
 
 @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
-@Config(name = Hexmyth.MOD_ID)
+@Config(name = HexMyth.MOD_ID)
 public class HexmythConfigFabric extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Category("common")
     @ConfigEntry.Gui.TransitiveObject

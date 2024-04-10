@@ -1,7 +1,7 @@
 package net.hexmyth.fabric;
 
 import net.fabricmc.api.ModInitializer;
-import net.hexmyth.Hexmyth;
+import net.hexmyth.HexMyth;
 
 /**
  * This is your loading entrypoint on fabric(-likes), in case you need to initialize
@@ -14,6 +14,6 @@ import net.hexmyth.Hexmyth;
 public class HexmythFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        Hexmyth.init();
+        HexMyth.init();
     }
 }

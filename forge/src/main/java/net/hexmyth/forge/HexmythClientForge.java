@@ -1,6 +1,6 @@
 package net.hexmyth.forge;
 
-import net.hexmyth.HexmythClient;
+import net.hexmyth.HexMythClient;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 /**
@@ -8,6 +8,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
  */
 public class HexmythClientForge {
     public static void init(FMLClientSetupEvent event) {
-        HexmythClient.init();
+        HexMythClient.init();
     }
 }

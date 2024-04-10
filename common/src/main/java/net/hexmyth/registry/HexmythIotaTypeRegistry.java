@@ -9,7 +9,7 @@ import net.minecraft.core.Registry;
 import java.util.HashMap;
 import java.util.Map;
 
-import static net.hexmyth.Hexmyth.id;
+import static net.hexmyth.HexMyth.id;
 
 public class HexmythIotaTypeRegistry {
     public static Map<ResourceLocation, IotaType<?>> TYPES = new HashMap<>();

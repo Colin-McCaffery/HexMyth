@@ -3,17 +3,17 @@ package net.hexmyth.registry;
 import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.hexmyth.Hexmyth;
+import net.hexmyth.HexMyth;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.Registry;
 
-import static net.hexmyth.Hexmyth.id;
+import static net.hexmyth.HexMyth.id;
 
 public class HexmythItemRegistry {
     // Register items through this
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Hexmyth.MOD_ID, Registry.ITEM_REGISTRY);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(HexMyth.MOD_ID, Registry.ITEM_REGISTRY);
 
     public static void init() {
         ITEMS.register();

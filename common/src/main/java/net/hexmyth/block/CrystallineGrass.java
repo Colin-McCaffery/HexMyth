@@ -1,5 +1,12 @@
 package net.hexmyth.block;
 
-public class CrystallineGrass {
 
+import net.minecraft.world.level.block.Block;
+
+public class CrystallineGrass extends Block {
+
+    public CrystallineGrass() {
+      super();
+
+    }
 }

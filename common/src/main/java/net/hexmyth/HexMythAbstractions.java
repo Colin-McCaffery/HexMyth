@@ -5,7 +5,7 @@ import dev.architectury.platform.Platform;
 
 import java.nio.file.Path;
 
-public class HexmythAbstractions {
+public class HexMythAbstractions {
     /**
      * This explanation is mostly from Architectury's template project.
      * One thing I would like to add for those familiar with Hex Casting's layout:
@@ -18,7 +18,7 @@ public class HexmythAbstractions {
      * <p>
      * Example:
      * <p>
-     * Expect: net.hexmyth.HexmythAbstractions#getConfigDirectory()
+     * Expect: net.hexmyth.HexMythAbstractions#getConfigDirectory()
      * <p>
      * Actual Fabric: net.hexmyth.fabric.HexmythAbstractionsImpl#getConfigDirectory()
      * <p>
