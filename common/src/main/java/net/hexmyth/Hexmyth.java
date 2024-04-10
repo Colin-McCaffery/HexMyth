@@ -18,7 +18,7 @@ public class Hexmyth {
 
 
     public static void init() {
-        LOGGER.info("Hexmyth says hello!");
+        LOGGER.info("HexMyth says hello!");
 
         HexmythAbstractions.initPlatformSpecific();
         HexmythItemRegistry.init();

@@ -24,6 +24,8 @@ dependencies {
     modCompileOnly "at.petra-k.hexcasting:hexcasting-fabric-$minecraftVersion:$hexcastingVersion"
     modCompileOnly "vazkii.patchouli:Patchouli-xplat:$minecraftVersion-$patchouliVersion"
     modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.19.2-2.0.1.136'
+    minecraft "com.mojang:minecraft:${project.minecraftVersion}"
+    mappings "net.fabricmc:yarn:${project.minecraftVersion}+build.9:v2"
 }
 
 publishing {
