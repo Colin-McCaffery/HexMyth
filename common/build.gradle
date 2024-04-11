@@ -23,8 +23,8 @@ dependencies {
     modCompileOnly "at.petra-k.paucal:paucal-common-$minecraftVersion:$paucalVersion"
     modCompileOnly "at.petra-k.hexcasting:hexcasting-fabric-$minecraftVersion:$hexcastingVersion"
     modCompileOnly "vazkii.patchouli:Patchouli-xplat:$minecraftVersion-$patchouliVersion"
-    minecraft "com.mojang:minecraft:${project.minecraftVersion}"
     modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.19.2-2.0.1.136'
+    minecraft "com.mojang:minecraft:${project.minecraftVersion}"
 }
 
 publishing {

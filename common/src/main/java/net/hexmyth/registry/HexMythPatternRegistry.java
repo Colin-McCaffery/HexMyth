@@ -14,7 +14,7 @@ import java.util.List;
 
 import static net.hexmyth.HexMyth.id;
 
-public class HexmythPatternRegistry {
+public class HexMythPatternRegistry {
     public static List<Triple<HexPattern, ResourceLocation, Action>> PATTERNS = new ArrayList<>();
     public static List<Triple<HexPattern, ResourceLocation, Action>> PER_WORLD_PATTERNS = new ArrayList<>();
     // IMPORTANT: be careful to keep the registration calls looking like this, or you'll have to edit the hexdoc pattern regex.

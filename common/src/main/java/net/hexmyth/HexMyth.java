@@ -2,9 +2,9 @@ package net.hexmyth;
 
 
 import net.hexmyth.networking.HexmythNetworking;
-import net.hexmyth.registry.HexmythIotaTypeRegistry;
-import net.hexmyth.registry.HexmythItemRegistry;
-import net.hexmyth.registry.HexmythPatternRegistry;
+import net.hexmyth.registry.HexMythIotaTypeRegistry;
+import net.hexmyth.registry.HexMythItemRegistry;
+import net.hexmyth.registry.HexMythPatternRegistry;
 import net.hexmyth.world.HexMythRegion;
 import net.hexmyth.world.HexMythSurfaceRuleData;
 import net.hexmyth.world.biome.ModBiomes;
@@ -29,9 +29,9 @@ public class HexMyth {
         LOGGER.info("HexMyth says hello!");
 
         HexMythAbstractions.initPlatformSpecific();
-        HexmythItemRegistry.init();
-        HexmythIotaTypeRegistry.init();
-        HexmythPatternRegistry.init();
+        HexMythItemRegistry.init();
+        HexMythIotaTypeRegistry.init();
+        HexMythPatternRegistry.init();
 		    HexmythNetworking.init();
         ModBiomes.registerBiomes();
 

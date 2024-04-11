@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static net.hexmyth.HexMyth.id;
 
-public class HexmythIotaTypeRegistry {
+public class HexMythIotaTypeRegistry {
     public static Map<ResourceLocation, IotaType<?>> TYPES = new HashMap<>();
 
     public static void init() {
