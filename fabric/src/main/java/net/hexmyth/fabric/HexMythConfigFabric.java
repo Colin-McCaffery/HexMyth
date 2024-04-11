@@ -14,7 +14,7 @@ import net.fabricmc.api.EnvType;
 
 @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
 @Config(name = HexMyth.MOD_ID)
-public class HexmythConfigFabric extends PartitioningSerializer.GlobalData {
+public class HexMythConfigFabric extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Category("common")
     @ConfigEntry.Gui.TransitiveObject
     public final Common common = new Common();
@@ -26,8 +26,8 @@ public class HexmythConfigFabric extends PartitioningSerializer.GlobalData {
     public final Server server = new Server();
 
     public static void init() {
-        AutoConfig.register(HexmythConfigFabric.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
-        var instance = AutoConfig.getConfigHolder(HexmythConfigFabric.class).getConfig();
+        AutoConfig.register(HexMythConfigFabric.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
+        var instance = AutoConfig.getConfigHolder(HexMythConfigFabric.class).getConfig();
 
         HexmythConfig.setCommon(instance.common);
 

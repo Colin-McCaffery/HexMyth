@@ -11,7 +11,7 @@ import net.hexmyth.HexMyth;
  * Feel free to check out the <a href="https://github.com/architectury/architectury-templates">Architectury templates</a>
  * if you want to see how to add quilt-specific code.
  */
-public class HexmythFabric implements ModInitializer {
+public class HexMythFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         HexMyth.init();

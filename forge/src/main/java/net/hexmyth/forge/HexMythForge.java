@@ -11,12 +11,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
  * something platform-specific.
  */
 @Mod(HexMyth.MOD_ID)
-public class HexmythForge {
-    public HexmythForge() {
+public class HexMythForge {
+    public HexMythForge() {
         // Submit our event bus to let architectury register our content on the right time
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(HexMyth.MOD_ID, bus);
-        bus.addListener(HexmythClientForge::init);
+        bus.addListener(HexMythClientForge::init);
         HexMyth.init();
     }
 }

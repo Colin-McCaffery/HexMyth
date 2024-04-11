@@ -5,7 +5,7 @@ import net.hexmyth.HexMythAbstractions;
 
 import java.nio.file.Path;
 
-public class HexmythAbstractionsImpl {
+public class HexMythAbstractionsImpl {
     /**
      * This is the actual implementation of {@link HexMythAbstractions#getConfigDirectory()}.
      */
@@ -14,6 +14,6 @@ public class HexmythAbstractionsImpl {
     }
 	
     public static void initPlatformSpecific() {
-        HexmythConfigFabric.init();
+        HexMythConfigFabric.init();
     }
 }

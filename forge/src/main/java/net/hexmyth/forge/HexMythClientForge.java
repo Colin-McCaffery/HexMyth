@@ -6,7 +6,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 /**
  * Forge client loading entrypoint.
  */
-public class HexmythClientForge {
+public class HexMythClientForge {
     public static void init(FMLClientSetupEvent event) {
         HexMythClient.init();
     }

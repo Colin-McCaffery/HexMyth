@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.hexmyth.fabric.HexmythFabric"
+      "net.hexmyth.fabric.HexMythFabric"
     ],
     "client": [
-      "net.hexmyth.fabric.HexmythClientFabric"
+      "net.hexmyth.fabric.HexMythClientFabric"
     ]
   },
   "mixins": [
