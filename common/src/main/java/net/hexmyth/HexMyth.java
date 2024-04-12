@@ -1,13 +1,15 @@
 package net.hexmyth;
 
 
+import net.hexmyth.block.CrystallineGrassBlock;
 import net.hexmyth.networking.HexmythNetworking;
+import net.hexmyth.registry.HexMythBlockRegistry;
 import net.hexmyth.registry.HexMythIotaTypeRegistry;
 import net.hexmyth.registry.HexMythItemRegistry;
 import net.hexmyth.registry.HexMythPatternRegistry;
-import net.hexmyth.world.HexMythRegion;
-import net.hexmyth.world.HexMythSurfaceRuleData;
-import net.hexmyth.world.biome.ModBiomes;
+//import net.hexmyth.world.HexMythRegion;
+//import net.hexmyth.world.HexMythSurfaceRuleData;
+//import net.hexmyth.world.biome.ModBiomes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Material;
@@ -23,20 +25,21 @@ import terrablender.api.SurfaceRuleManager;
 public class HexMyth {
     public static final String MOD_ID = "hexmyth";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
-    public static final Block CRYSTALLINE_GRASS_BLOCK  = new Block(Block.Properties.of(Material.DIRT).strength(0.6F).sound(net.minecraft.world.level.block.SoundType.AMETHYST));
+//    public static final Block CRYSTALLINE_GRASS_BLOCK  = new CrystallineGrassBlock();
 
     public static void init() {
         LOGGER.info("HexMyth says hello!");
 
         HexMythAbstractions.initPlatformSpecific();
+        HexMythBlockRegistry.init();
         HexMythItemRegistry.init();
         HexMythIotaTypeRegistry.init();
         HexMythPatternRegistry.init();
 		    HexmythNetworking.init();
-        ModBiomes.registerBiomes();
-
-        Regions.register(new HexMythRegion(new ResourceLocation(MOD_ID, "overworld"), 20));
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, HexMythSurfaceRuleData.makeRules());
+//        ModBiomes.registerBiomes();
+//
+//        Regions.register(new HexMythRegion(new ResourceLocation(MOD_ID, "overworld"), 20));
+//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, HexMythSurfaceRuleData.makeRules());
     }
 
     /**

@@ -8,6 +8,6 @@ import net.minecraft.world.level.material.Material;
 public class CrystallineGrassBlock extends Block {
 
     public CrystallineGrassBlock() {
-        super(Properties.of(Material.DIRT).strength(0.6F).sound(SoundType.AMETHYST));
+        super(Properties.of(Material.DIRT).strength(1.0F).sound(SoundType.AMETHYST));
     }
 }
