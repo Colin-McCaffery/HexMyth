@@ -38,7 +38,6 @@ public class HexMyth {
         HexMythIotaTypeRegistry.init();
         HexMythPatternRegistry.init();
 		    HexmythNetworking.init();
-        ModBiomes.registerBiomes();
     }
 
     /**

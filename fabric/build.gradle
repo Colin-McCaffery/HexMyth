@@ -22,6 +22,10 @@ configurations {
     developmentFabric.extendsFrom common
 }
 
+repositories {
+    maven { url = 'https://maven.minecraftforge.net/' }
+}
+
 dependencies {
     modCompileOnly(group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2') // for @Nonnull
 
@@ -55,6 +59,8 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+    modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.19.2-2.0.1.136'
 }
 
 processResources {
