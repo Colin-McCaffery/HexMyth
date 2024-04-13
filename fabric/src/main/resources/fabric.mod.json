@@ -16,10 +16,14 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.hexmyth.fabric.HexMythFabric"
+      "net.hexmyth.fabric.HexMythFabric",
+      "net.hexmyth.world.biome.TestMod"
     ],
     "client": [
       "net.hexmyth.fabric.HexMythClientFabric"
+    ],
+    "terrablender": [
+      "net.hexmyth.world.biome.TestMod"
     ]
   },
   "mixins": [
@@ -32,6 +36,9 @@
     "fabric-api": "*",
     "fabric-language-kotlin": ">=${fabricKotlinVersion}",
     "architectury": ">=${architecturyVersion}",
-    "hexcasting": ">=${hexcastingVersion}"
+    "hexcasting": ">=${hexcastingVersion}",
+    "fabric": "*",
+    "java": ">=17",
+    "terrablender": "*"
   }
 }

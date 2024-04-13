@@ -10,6 +10,9 @@ import net.hexmyth.registry.HexMythPatternRegistry;
 //import net.hexmyth.world.HexMythRegion;
 //import net.hexmyth.world.HexMythSurfaceRuleData;
 //import net.hexmyth.world.biome.ModBiomes;
+import net.hexmyth.world.biome.ModBiomes;
+import net.hexmyth.world.biome.TestRegion;
+import net.hexmyth.world.biome.TestSurfaceRuleData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Material;
@@ -25,7 +28,6 @@ import terrablender.api.SurfaceRuleManager;
 public class HexMyth {
     public static final String MOD_ID = "hexmyth";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
-//    public static final Block CRYSTALLINE_GRASS_BLOCK  = new CrystallineGrassBlock();
 
     public static void init() {
         LOGGER.info("HexMyth says hello!");
@@ -36,10 +38,7 @@ public class HexMyth {
         HexMythIotaTypeRegistry.init();
         HexMythPatternRegistry.init();
 		    HexmythNetworking.init();
-//        ModBiomes.registerBiomes();
-//
-//        Regions.register(new HexMythRegion(new ResourceLocation(MOD_ID, "overworld"), 20));
-//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, HexMythSurfaceRuleData.makeRules());
+        ModBiomes.registerBiomes();
     }
 
     /**

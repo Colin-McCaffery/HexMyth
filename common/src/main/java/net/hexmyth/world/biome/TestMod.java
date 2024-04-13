@@ -17,20 +17,29 @@
  */
 package net.hexmyth.world.biome;
 
-import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.biome.Biome;
+import net.fabricmc.api.ModInitializer;
+import net.minecraft.resources.ResourceLocation;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
+import terrablender.api.TerraBlenderApi;
 
-public class ModBiomes
+public class TestMod implements ModInitializer, TerraBlenderApi
 {
-  public static void registerBiomes()
+  public static final String MOD_ID = "test";
+
+  @Override
+  public void onInitialize()
   {
-    register(TestBiomes.HOT_RED, TestOverworldBiomes.hotRed());
-    register(TestBiomes.COLD_BLUE, TestOverworldBiomes.coldBlue());
+    net.hexmyth.world.biome.ModBiomes.registerBiomes();
   }
 
-  private static void register(ResourceKey<Biome> key, Biome biome)
+  @Override
+  public void onTerraBlenderInitialized()
   {
-    BuiltinRegistries.register(BuiltinRegistries.BIOME, key, biome);
+    // Given we only add two biomes, we should keep our weight relatively low.
+    Regions.register(new TestRegion(new ResourceLocation(MOD_ID, "overworld"), 2));
+
+    // Register our surface rules
+    SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, TestSurfaceRuleData.makeRules());
   }
 }

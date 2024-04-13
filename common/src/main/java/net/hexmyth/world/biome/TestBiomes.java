@@ -17,20 +17,19 @@
  */
 package net.hexmyth.world.biome;
 
-import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 
-public class ModBiomes
+public class TestBiomes
 {
-  public static void registerBiomes()
-  {
-    register(TestBiomes.HOT_RED, TestOverworldBiomes.hotRed());
-    register(TestBiomes.COLD_BLUE, TestOverworldBiomes.coldBlue());
-  }
+  public static final ResourceKey<Biome> HOT_RED = register("hot_red");
+  public static final ResourceKey<Biome> COLD_BLUE = register("cold_blue");
 
-  private static void register(ResourceKey<Biome> key, Biome biome)
+  private static ResourceKey<Biome> register(String name)
   {
-    BuiltinRegistries.register(BuiltinRegistries.BIOME, key, biome);
+    return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(
+        TestMod.MOD_ID, name));
   }
 }
