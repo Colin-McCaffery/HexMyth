@@ -17,7 +17,8 @@
   "entrypoints": {
     "main": [
       "net.hexmyth.fabric.HexMythFabric",
-      "net.hexmyth.world.biome.TestMod"
+      "net.hexmyth.world.biome.TestMod",
+      "net.hexmyth.world.feature.FeatureExampleMod"
     ],
     "client": [
       "net.hexmyth.fabric.HexMythClientFabric"
@@ -39,6 +40,7 @@
     "hexcasting": ">=${hexcastingVersion}",
     "fabric": "*",
     "java": ">=17",
-    "terrablender": "*"
+    "terrablender": "*",
+    "fabric-biome-api-v1": "*"
   }
 }
