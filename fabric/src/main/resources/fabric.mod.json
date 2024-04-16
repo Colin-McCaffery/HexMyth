@@ -17,14 +17,13 @@
   "entrypoints": {
     "main": [
       "net.hexmyth.fabric.HexMythFabric",
-      "net.hexmyth.world.biome.TestMod",
-      "net.hexmyth.world.feature.FeatureExampleMod"
+      "net.hexmyth.world.biome.BiomeInit"
     ],
     "client": [
       "net.hexmyth.fabric.HexMythClientFabric"
     ],
     "terrablender": [
-      "net.hexmyth.world.biome.TestMod"
+      "net.hexmyth.world.biome.BiomeInit"
     ]
   },
   "mixins": [
@@ -40,7 +39,6 @@
     "hexcasting": ">=${hexcastingVersion}",
     "fabric": "*",
     "java": ">=17",
-    "terrablender": "*",
-    "fabric-biome-api-v1": "*"
+    "terrablender": "*"
   }
 }
