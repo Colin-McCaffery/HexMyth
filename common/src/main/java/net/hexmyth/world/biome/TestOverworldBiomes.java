@@ -25,6 +25,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 
 import javax.annotation.Nullable;
+import net.minecraft.world.level.biome.Biome.Precipitation;
 
 public class TestOverworldBiomes
 {
@@ -58,26 +59,7 @@ public class TestOverworldBiomes
     BiomeDefaultFeatures.addSurfaceFreezing(builder);
   }
 
-  public static Biome hotRed()
-  {
-    MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-    BiomeDefaultFeatures.desertSpawns(spawnBuilder);
-
-    BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
-    BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
-    globalOverworldGeneration(biomeBuilder);
-    BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-    BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
-    BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
-    BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
-    BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
-    BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
-    BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
-    BiomeDefaultFeatures.addDesertExtraDecoration(biomeBuilder);
-    return biome(Biome.Precipitation.NONE, 2.0F, 0.0F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
-  }
-
-  public static Biome coldBlue()
+  public static Biome crystalline_forest()
   {
     MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
     spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 5, 1, 3));
@@ -90,6 +72,6 @@ public class TestOverworldBiomes
     BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
     BiomeDefaultFeatures.addExtraEmeralds(biomeBuilder);
     BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
-    return biome(Biome.Precipitation.SNOW, -0.7F, 0.9F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+    return biome(Precipitation.NONE, 0.7F, 0.9F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
   }
 }

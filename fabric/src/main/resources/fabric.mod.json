@@ -17,13 +17,13 @@
   "entrypoints": {
     "main": [
       "net.hexmyth.fabric.HexMythFabric",
-      "net.hexmyth.world.biome.BiomeInit"
+      "net.hexmyth.world.biome.TestMod"
     ],
     "client": [
       "net.hexmyth.fabric.HexMythClientFabric"
     ],
     "terrablender": [
-      "net.hexmyth.world.biome.BiomeInit"
+      "net.hexmyth.world.biome.TestMod"
     ]
   },
   "mixins": [

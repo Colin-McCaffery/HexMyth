@@ -8,7 +8,7 @@ public class ModBiomes
 {
   public static void registerBiomes()
   {
-    register(HexMythBiomes.HOT_RED, HexMythOverworldBiomes.hotRed());
+    register(TestBiomes.CRYSTALLINE_FOREST, TestOverworldBiomes.crystalline_forest());
   }
 
   private static void register(ResourceKey<Biome> key, Biome biome)
