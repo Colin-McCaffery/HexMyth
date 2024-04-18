@@ -8,8 +8,6 @@ import net.minecraft.world.level.levelgen.placement.CaveSurface;
 
 public class TestSurfaceRuleData
 {
-  private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
-  private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
   public static SurfaceRules.RuleSource getCrystallineGrass() {
     return makeStateRule(HexMythBlockRegistry.CRYSTALLINE_GRASS_BLOCK.get());
   }

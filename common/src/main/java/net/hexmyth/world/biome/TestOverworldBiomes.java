@@ -62,8 +62,6 @@ public class TestOverworldBiomes
   public static Biome crystalline_forest()
   {
     MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-    spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 5, 1, 3));
-    BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
     BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     globalOverworldGeneration(biomeBuilder);

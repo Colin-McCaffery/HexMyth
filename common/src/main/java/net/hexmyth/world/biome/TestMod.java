@@ -18,6 +18,7 @@
 package net.hexmyth.world.biome;
 
 import net.fabricmc.api.ModInitializer;
+import net.hexmyth.registry.HexMythBlockRegistry;
 import net.minecraft.resources.ResourceLocation;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
@@ -36,10 +37,8 @@ public class TestMod implements ModInitializer, TerraBlenderApi
   @Override
   public void onTerraBlenderInitialized()
   {
-    // Given we only add two biomes, we should keep our weight relatively low.
+    HexMythBlockRegistry.init();
     Regions.register(new TestRegion(new ResourceLocation(MOD_ID, "overworld"), 2));
-
-    // Register our surface rules
     SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, TestSurfaceRuleData.makeRules());
   }
 }

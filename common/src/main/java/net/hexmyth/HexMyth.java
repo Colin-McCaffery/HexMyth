@@ -22,7 +22,6 @@ public class HexMyth {
         LOGGER.info("HexMyth says hello!");
 
         HexMythAbstractions.initPlatformSpecific();
-        HexMythBlockRegistry.init();
         HexMythItemRegistry.init();
         HexMythIotaTypeRegistry.init();
         HexMythPatternRegistry.init();
