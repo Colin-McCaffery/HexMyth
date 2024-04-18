@@ -1,8 +1,9 @@
 package net.hexmyth;
 
 
+import net.hexmyth.client.RegisterClient;
 import net.hexmyth.networking.HexmythNetworking;
-import net.hexmyth.registry.HexMythBlockRegistry;
+//import net.hexmyth.registry.HexMythFeatureRegistry;
 import net.hexmyth.registry.HexMythIotaTypeRegistry;
 import net.hexmyth.registry.HexMythItemRegistry;
 import net.hexmyth.registry.HexMythPatternRegistry;
@@ -26,6 +27,8 @@ public class HexMyth {
         HexMythIotaTypeRegistry.init();
         HexMythPatternRegistry.init();
 		    HexmythNetworking.init();
+        RegisterClient.init();
+//        HexMythFeatureRegistry.init();
     }
 
     /**

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "hexmyth:block/stripped_crystalline_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "hexmyth:block/stripped_crystalline_wood"
+    },
+    "axis=z": {
+      "model": "hexmyth:block/stripped_crystalline_wood",
+      "x": 90
+    }
+  }
+}

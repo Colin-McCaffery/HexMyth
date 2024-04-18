@@ -1,5 +1,11 @@
 {
   "block.hexmyth.crystalline_grass": "Crystalline Grass Block",
+  "block.hexmyth.crystalline_leaves": "Crystalline Leaves",
+  "block.hexmyth.crystalline_wood": "Crystalline Wood",
+  "block.hexmyth.crystalline_wood_log": "Crystalline Log",
+  "block.hexmyth.crystalline_wood_planks": "Crystalline Planks",
+  "block.hexmyth.stipped_crystalline_wood": "Stripped Crystalline Wood",
+  "block.hexmyth.stripped_crystalline_wood_log": "Stripped Crystalline Log",
   "hexcasting.spell.hexmyth:congrats": "Congrats",
   "hexcasting.spell.hexmyth:signum": "Signum Purification",
   "hexcasting.spell.book.hexmyth:congrats": "Dum. Spell Actn.",

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "hexmyth:block/stripped_crystalline_wood_side"
+  }
+}

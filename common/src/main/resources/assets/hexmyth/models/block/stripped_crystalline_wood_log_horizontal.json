@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "hexmyth:block/crystalline_wood_end",
+    "side": "hexmyth:block/stripped_crystalline_wood_side"
+  }
+}
