@@ -67,11 +67,8 @@ public class TestOverworldBiomes
 
     BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     globalOverworldGeneration(biomeBuilder);
-    BiomeDefaultFeatures.addFrozenSprings(biomeBuilder);
     BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
     BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
-    BiomeDefaultFeatures.addExtraEmeralds(biomeBuilder);
-    BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
     return biome(Precipitation.NONE, 0.7F, 0.9F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
   }
 }
