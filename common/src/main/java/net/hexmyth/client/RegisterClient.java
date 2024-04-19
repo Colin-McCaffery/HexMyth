@@ -8,7 +8,7 @@ public class RegisterClient {
 
   public static void init() {
     var x = IClientXplatAbstractions.INSTANCE;
-    x.setRenderLayer(HexMythBlockRegistry.CRYSTALLINE_LEAVES.get(), RenderType.cutoutMipped());
+    x.setRenderLayer(HexMythBlockRegistry.CRYSTALLINE_LEAVES.get(), RenderType.translucent());
+    x.setRenderLayer(HexMythBlockRegistry.CRYSTALLINE_SAPLING.get(), RenderType.cutoutMipped());
   }
-
 }

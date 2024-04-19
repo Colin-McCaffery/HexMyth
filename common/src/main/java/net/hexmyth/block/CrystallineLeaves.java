@@ -7,6 +7,6 @@ import net.minecraft.world.level.material.Material;
 public class CrystallineLeaves extends Block {
 
   public CrystallineLeaves() {
-    super(Properties.of(Material.LEAVES).strength(0.3F).sound(SoundType.AMETHYST));
+    super(Properties.of(Material.LEAVES).noOcclusion().strength(0.3F).sound(SoundType.AMETHYST));
   }
 }
