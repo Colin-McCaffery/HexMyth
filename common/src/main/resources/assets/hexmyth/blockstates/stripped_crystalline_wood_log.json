@@ -6,7 +6,7 @@
       "y": 90
     },
     "axis=y": {
-      "model": "hexmyth:block/stripped_crystalline_wood"
+      "model": "hexmyth:block/stripped_crystalline_wood_log"
     },
     "axis=z": {
       "model": "hexmyth:block/stripped_crystalline_wood_log_horizontal",

@@ -7,6 +7,6 @@ import net.minecraft.world.level.material.Material;
 public class CrystallineWoodPlanks extends Block {
 
   public CrystallineWoodPlanks() {
-    super(Properties.of(Material.WOOD).strength(1.4F).sound(SoundType.AMETHYST));
+    super(Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.AMETHYST));
   }
 }

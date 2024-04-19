@@ -1,12 +1,13 @@
 package net.hexmyth.block;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
 
-public class StrippedCrystallineWoodLog extends Block {
+public class StrippedCrystallineWoodLog extends RotatedPillarBlock {
 
   public StrippedCrystallineWoodLog() {
-    super(Properties.of(Material.WOOD).strength(1.4F).sound(SoundType.AMETHYST));
+    super(Properties.of(Material.WOOD).strength(3.0F).sound(SoundType.AMETHYST));
   }
 }

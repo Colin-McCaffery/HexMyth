@@ -4,9 +4,11 @@ package net.hexmyth;
 import net.hexmyth.client.RegisterClient;
 import net.hexmyth.networking.HexmythNetworking;
 //import net.hexmyth.registry.HexMythFeatureRegistry;
+import net.hexmyth.registry.HexMythBlockRegistry;
 import net.hexmyth.registry.HexMythIotaTypeRegistry;
 import net.hexmyth.registry.HexMythItemRegistry;
 import net.hexmyth.registry.HexMythPatternRegistry;
+import net.hexmyth.world.biome.TestMod;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,11 +25,28 @@ public class HexMyth {
         LOGGER.info("HexMyth says hello!");
 
         HexMythAbstractions.initPlatformSpecific();
+        HexMythBlockRegistry.init();
         HexMythItemRegistry.init();
         HexMythIotaTypeRegistry.init();
         HexMythPatternRegistry.init();
 		    HexmythNetworking.init();
         RegisterClient.init();
+        // Look I know this looks really scuffed BUT it's the only way I could think of to make sure that the blocks are registered before the terraBlender stuff is initialized
+        // Basically otherwise it will try to register the crystalline forest but since it uses the crystalline grass block it shits itself if that hasn't been registered yet
+        new Thread(() -> {
+            while (!TestMod.terraBlenderInitialized) {
+                if (TestMod.terraBlenderInitialized) {
+                    TestMod.init();
+                }
+                else {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
 //        HexMythFeatureRegistry.init();
     }
 
