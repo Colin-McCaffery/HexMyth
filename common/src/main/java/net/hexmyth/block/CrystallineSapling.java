@@ -1,18 +1,18 @@
 package net.hexmyth.block;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.hexmyth.world.feature.tree.CrystallineTree;
 
-public class CrystallineSapling extends Block {
+public class CrystallineSapling extends SaplingBlock {
+
+  private static final AbstractTreeGrower CrystallineTree = new CrystallineTree();
 
   public CrystallineSapling() {
-    super(Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.AMETHYST));
+    super(CrystallineTree, Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS));
   }
+
+
 }

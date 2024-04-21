@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "hexmyth:crystalline_wood",
+    "hexmyth:crystalline_wood_log",
+    "hexmyth:crystalline_wood_planks",
+    "hexmyth:stripped_crystalline_wood",
+    "hexmyth:stripped_crystalline_wood_log"
+  ]
+}
