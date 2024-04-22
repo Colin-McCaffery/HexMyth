@@ -17,22 +17,11 @@
  */
 package net.hexmyth.world.biome;
 
-import static net.hexmyth.world.feature.tree.CrystallineTreeGrower.CRYSTALLINE_TREE;
-
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.Dynamic;
-import com.sun.source.tree.Tree;
-import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.List;
-import net.hexmyth.registry.HexMythFeatureRegistry;
 import net.hexmyth.world.feature.tree.CrystallineTreeFeature;
-import net.hexmyth.world.feature.tree.CrystallineTreeGrower;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Holder.Direct;
-import net.minecraft.core.MappedRegistry;
 import net.minecraft.core.Registry;
-import net.minecraft.core.WritableRegistry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -40,21 +29,16 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 
 import javax.annotation.Nullable;
 import net.minecraft.world.level.biome.Biome.Precipitation;
-import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
-import org.jetbrains.annotations.NotNull;
 
 public class TestOverworldBiomes
 {
