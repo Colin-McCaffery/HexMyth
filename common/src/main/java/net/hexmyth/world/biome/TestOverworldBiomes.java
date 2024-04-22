@@ -17,7 +17,27 @@
  */
 package net.hexmyth.world.biome;
 
+import static net.hexmyth.world.feature.tree.CrystallineTreeGrower.CRYSTALLINE_TREE;
+
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.Dynamic;
+import com.sun.source.tree.Tree;
+import java.lang.reflect.Field;
+import java.util.Collections;
+import java.util.List;
+import net.hexmyth.registry.HexMythFeatureRegistry;
+import net.hexmyth.world.feature.tree.CrystallineTreeFeature;
+import net.hexmyth.world.feature.tree.CrystallineTreeGrower;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Holder.Direct;
+import net.minecraft.core.MappedRegistry;
+import net.minecraft.core.Registry;
+import net.minecraft.core.WritableRegistry;
+import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
@@ -26,11 +46,21 @@ import net.minecraft.world.level.biome.*;
 
 import javax.annotation.Nullable;
 import net.minecraft.world.level.biome.Biome.Precipitation;
+import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import org.jetbrains.annotations.NotNull;
 
 public class TestOverworldBiomes
 {
   @Nullable
   private static final Music NORMAL_MUSIC = null;
+  private static final TreeConfiguration CRYSTALLINE_TREE_CONFIG = CrystallineTreeFeature.CRYSTALLINE_TREE_CONFIG;
 
   protected static int calculateSkyColor(float color)
   {
@@ -62,11 +92,20 @@ public class TestOverworldBiomes
   public static Biome crystalline_forest()
   {
     MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-
     BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     globalOverworldGeneration(biomeBuilder);
     BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-    BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+    // The below code is just to add a tree :(
+    ConfiguredFeature<TreeConfiguration, TreeFeature> configuredFeature = new ConfiguredFeature<>(new CrystallineTreeFeature(), CRYSTALLINE_TREE_CONFIG);
+    ResourceLocation resourceLocation = new ResourceLocation(TestMod.MOD_ID, "crystalline_tree");
+    ResourceKey<ConfiguredFeature<?, ?>> key = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, resourceLocation);
+    BuiltinRegistries.register(BuiltinRegistries.CONFIGURED_FEATURE, key.location(), configuredFeature);
+    Holder<ConfiguredFeature<?, ?>> featureHolder = Holder.Reference.createStandAlone(BuiltinRegistries.CONFIGURED_FEATURE, key);
+    List<PlacementModifier> placementModifiers = Collections.singletonList(PlacementUtils.HEIGHTMAP_WORLD_SURFACE);
+    new PlacedFeature(featureHolder, placementModifiers);
+    Holder<PlacedFeature> placedFeatureHolder = Holder.Reference.createStandAlone(BuiltinRegistries.PLACED_FEATURE, ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY,  resourceLocation));
+    biomeBuilder.addFeature(Decoration.VEGETAL_DECORATION, placedFeatureHolder);
+
     return biome(Precipitation.NONE, 0.7F, 0.9F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
   }
 }

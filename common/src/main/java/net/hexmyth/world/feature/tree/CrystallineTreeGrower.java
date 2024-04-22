@@ -16,13 +16,13 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import org.jetbrains.annotations.Nullable;
 
-public class CrystallineTree extends AbstractTreeGrower {
+public class CrystallineTreeGrower extends AbstractTreeGrower {
 
-  private static final Block LOG = HexMythBlockRegistry.CRYSTALLINE_WOOD_LOG.get();
-  private static final Block LEAVES = HexMythBlockRegistry.CRYSTALLINE_LEAVES.get();
+  public static final Block LOG = HexMythBlockRegistry.CRYSTALLINE_WOOD_LOG.get();
+  public static final Block LEAVES = HexMythBlockRegistry.CRYSTALLINE_LEAVES.get();
   public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> CRYSTALLINE_TREE;
 
-  public CrystallineTree() {
+  public CrystallineTreeGrower() {
     super();
   }
 
@@ -37,11 +37,11 @@ public class CrystallineTree extends AbstractTreeGrower {
     CRYSTALLINE_TREE = FeatureUtils.register("crystalline_tree", Feature.TREE, createCrystallineTree().build());
   }
 
-  private static TreeConfiguration.TreeConfigurationBuilder createCrystallineTree() {
+  public static TreeConfiguration.TreeConfigurationBuilder createCrystallineTree() {
     return createStraightBlobTree(LOG, LEAVES, 5, 2, 0, 2).ignoreVines();
   }
 
-  private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block block, Block block2, int i, int j, int k, int l) {
+  public static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block block, Block block2, int i, int j, int k, int l) {
     return new TreeConfiguration.TreeConfigurationBuilder(
         BlockStateProvider.simple(block), new StraightTrunkPlacer(i, j, k), BlockStateProvider.simple(block2), new BlobFoliagePlacer(ConstantInt.of(l), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1));
   }
