@@ -35,7 +35,7 @@ import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.placement.EnvironmentScanPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.levelgen.blockpredicates.MatchingBlocksPredicate;
 
 public class TestOverworldBiomes
 {
