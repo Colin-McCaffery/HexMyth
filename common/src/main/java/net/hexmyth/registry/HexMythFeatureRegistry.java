@@ -13,6 +13,5 @@ public class HexMythFeatureRegistry {
 
   public static void init() {
     FEATURES.register();
-    System.out.println("Feature registered");
   }
 }

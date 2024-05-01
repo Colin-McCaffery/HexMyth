@@ -17,28 +17,25 @@
  */
 package net.hexmyth.world.biome;
 
-import java.util.Collections;
-import java.util.List;
+import net.hexmyth.registry.HexMythBlockRegistry;
 import net.hexmyth.world.feature.tree.CrystallineTreeFeature;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.core.Holder.Direct;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.Vec3i;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.biome.*;
-
 import javax.annotation.Nullable;
 import net.minecraft.world.level.biome.Biome.Precipitation;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.placement.EnvironmentScanPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.block.Block;
 
 public class TestOverworldBiomes
 {
@@ -79,15 +76,11 @@ public class TestOverworldBiomes
     BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     globalOverworldGeneration(biomeBuilder);
     BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-    // The below code is just to add a tree :(
-    ConfiguredFeature<TreeConfiguration, TreeFeature> configuredFeature = new ConfiguredFeature<>(new CrystallineTreeFeature(), CRYSTALLINE_TREE_CONFIG);
-    ResourceLocation resourceLocation = new ResourceLocation(TestMod.MOD_ID, "crystalline_tree");
-    ResourceKey<ConfiguredFeature<?, ?>> key = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, resourceLocation);
-    BuiltinRegistries.register(BuiltinRegistries.CONFIGURED_FEATURE, key.location(), configuredFeature);
-    Holder<ConfiguredFeature<?, ?>> featureHolder = Holder.Reference.createStandAlone(BuiltinRegistries.CONFIGURED_FEATURE, key);
-    List<PlacementModifier> placementModifiers = Collections.singletonList(PlacementUtils.HEIGHTMAP_WORLD_SURFACE);
-    new PlacedFeature(featureHolder, placementModifiers);
-    Holder<PlacedFeature> placedFeatureHolder = Holder.Reference.createStandAlone(BuiltinRegistries.PLACED_FEATURE, ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY,  resourceLocation));
+    // really scuffed code for adding a tree to my biome but I think it'll work
+    Holder<PlacedFeature> placedFeatureHolder = PlacementUtils.register("crystalline_tree", CrystallineTreeFeature.CRYSTALLINE_TREE_CONFIGURED_FEATURE,
+        EnvironmentScanPlacement.scanningFor(
+            Direction.DOWN, new MatchingBlocksPredicate(new Vec3i(0, 0, 0), HolderSet.direct(
+                new Direct<>(HexMythBlockRegistry.CRYSTALLINE_GRASS_BLOCK.get()))), 1));
     biomeBuilder.addFeature(Decoration.VEGETAL_DECORATION, placedFeatureHolder);
 
     return biome(Precipitation.NONE, 0.7F, 0.9F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
